@@ -86,13 +86,6 @@ export class Trebuchet extends AbstractTask {
         console.log(this.calculateSumWitWordDigits(data));
     }
 
-    solveBoth() {
-        console.log('First part: ');
-        this.solveFirst();
-        console.log('Second part: ');
-        this.solveSecond();
-    }
-
 }
 
 type namedNumbers = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine';
