@@ -1,4 +1,3 @@
-import { NewLineKind } from "typescript";
 import { AbstractTask } from "../AbstractTask";
 
 export class Trebuchet extends AbstractTask {
@@ -46,8 +45,8 @@ export class Trebuchet extends AbstractTask {
         let sum = 0;
 
         data.forEach(line => {
-           
-    
+
+
             // matching single digits as well as named digits
             const firstRegex = new RegExp(`^.*?(${numbersOr}|\\d)+?.*$`);
             const firstMatch = line.match(firstRegex);
@@ -55,12 +54,12 @@ export class Trebuchet extends AbstractTask {
             const lastRegex = new RegExp(`^.*(${numbersOr}|\\d)+.*?$`);
             const lastMatch = line.match(lastRegex);
 
-            if(!firstMatch || !lastMatch) {
+            if (!firstMatch || !lastMatch) {
                 return;
             }
 
-            let first = firstMatch[1] ?? null as string|null;
-            let last = lastMatch[1] ?? null as string|null;
+            let first = firstMatch[1] ?? null as string | null;
+            let last = lastMatch[1] ?? null as string | null;
 
 
             if (!first || !last) {
@@ -69,7 +68,7 @@ export class Trebuchet extends AbstractTask {
 
             const f = first.length > 1 ? Object.entries(digitizedNumbers).find(([key, value]) => value === first)![0] : first;
             const l = last.length > 1 ? Object.entries(digitizedNumbers).find(([key, value]) => value === last)![0] : last;
-            
+
             sum += Number(f) * 10 + Number(l);
         });
 
@@ -77,11 +76,11 @@ export class Trebuchet extends AbstractTask {
     }
 
 
-
     solveFirst() {
         const data = this.loadFile('01.txt').split('\n');
         console.log(this.calculateSum(data));
     }
+
     solveSecond() {
         const data = this.loadFile('01.txt').split('\n');
         console.log(this.calculateSumWitWordDigits(data));
