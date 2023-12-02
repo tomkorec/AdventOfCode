@@ -1,7 +1,9 @@
 import { Trebuchet } from "./tasks/01/Trebuchet";
+import { CubeConundrum } from "./tasks/02/CubeConundrum";
 
 const taskMapping: { [dayNumber: number]: new () => TaskInterface } = {
-    1: Trebuchet
+    1: Trebuchet,
+    2: CubeConundrum
 }
 
 function main() {
@@ -17,17 +19,17 @@ function main() {
 
     const taskInstance = new TaskClass();
 
-    if(method === 'first') {
+    if (method === 'first') {
         taskInstance.solveFirst();
         return;
     }
 
-    if(method === 'second') {
+    if (method === 'second') {
         taskInstance.solveSecond();
         return;
     }
 
-    if(method === 'both') {
+    if (method === 'both') {
         taskInstance.solveBoth();
     }
 
