@@ -1,9 +1,11 @@
 import { Trebuchet } from "./tasks/01/Trebuchet";
 import { CubeConundrum } from "./tasks/02/CubeConundrum";
+import { GearRatios } from "./tasks/03/GearRatios";
 
 const taskMapping: { [dayNumber: number]: new () => TaskInterface } = {
     1: Trebuchet,
-    2: CubeConundrum
+    2: CubeConundrum,
+    3: GearRatios
 }
 
 function main() {
